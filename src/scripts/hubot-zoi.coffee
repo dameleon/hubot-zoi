@@ -31,7 +31,7 @@ getZois = (cb) ->
   )
 
 module.exports = (robot) ->
-  robot.respond /zoi/i, (msg) ->
+  robot.hear /(zoi|ぞい)/i, (msg) ->
     getZois
       onZoi: (zois) -> msg.send msg.random zois
       onError: (err) -> msg.send "頑張れなかった...: #{err}"
